@@ -1,0 +1,11 @@
+# compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# output files
+dist/
+
+# misc
+.idea/
+node_modules/

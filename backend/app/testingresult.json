@@ -1,0 +1,38 @@
+{
+    "add": [
+        [
+            1,
+            "liman"
+        ],
+        [
+            1,
+            "bnei brak"
+        ]
+    ],
+    "remove": [
+        [
+            1,
+            "kiryat motzkin"
+        ],
+        [
+            1,
+            "kiryat atta"
+        ],
+        [
+            1,
+            "tel aviv"
+        ],
+        [
+            2,
+            "ben ami"
+        ],
+        [
+            2,
+            "kiryat shemona"
+        ],
+        [
+            2,
+            "nahariya"
+        ]
+    ]
+}

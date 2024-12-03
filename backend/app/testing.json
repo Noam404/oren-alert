@@ -1,0 +1,42 @@
+[
+    [
+        {
+            "id": "120379481203497",
+            "cat": "1",
+            "title": "test",
+            "data": [
+                "tel aviv",
+                "kiryat atta",
+                "kiryat motzkin",
+                "kiryat bialik",
+                "ramat gan"
+            ],
+            "desc": "test"
+        },
+        {
+            "id": "120379481203497",
+            "cat": "2",
+            "title": "test",
+            "data": [
+                "kiryat shemona",
+                "nahariya",
+                "ben ami"
+            ],
+            "desc": "test"
+        }
+    ],
+    [
+        {
+            "id": "120379481203497",
+            "cat": "1",
+            "title": "test",
+            "data": [
+                "bnei brak",
+                "kiryat bialik",
+                "ramat gan",
+                "liman"
+            ],
+            "desc": "test"
+        }
+    ]
+]

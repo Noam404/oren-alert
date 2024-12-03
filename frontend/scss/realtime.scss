@@ -1,0 +1,116 @@
+html {
+    font-size: 22px;
+    direction: rtl;
+    // background: lime;
+}
+
+#realTime {
+    $main_width: 17rem;
+    width: $main_width;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    #header {
+        height: 3rem;
+        display: flex;
+        position: relative;
+        $right: 1.5rem;
+        right: 1.5rem;
+        margin-bottom: 5px;
+        width: $main_width - $right;
+
+        #bg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -10;
+            background: linear-gradient(90deg, #166AA4, #1F88BD, #166AA4);
+        }
+        
+        img {
+            height: 100%;
+            position: absolute;
+            transform: translateX(50%);
+            border-radius: 50%;
+            border: 4px solid white;
+            align-self: center;
+        }
+
+        h1 {
+            position: relative;
+            right: 2rem;
+            font-size: 1.2rem;
+            margin: .4rem;
+            color: white;
+            transform: scaleY(1.4);
+            font-weight: normal;
+            text-shadow: 1px 1px 10px #000;
+        }
+    }
+
+    .category {
+        $orange_gradient: linear-gradient(#FD902B 45%, #FD7407 55%);
+        width: 100%;
+        .header {
+            position: relative;
+            width: 100%;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            padding: .5rem 10px;
+            box-sizing: border-box;
+            align-items: center;
+            margin: 1px 0;
+
+            .text {
+                transform: scaleY(1.4);
+                font-weight: bold;
+            }
+        }
+
+        .bg {
+            background: $orange_gradient;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            box-sizing: border-box;
+        }
+    }
+
+    .area {
+        .area_header {
+            position: relative;
+            padding: 5px;
+
+            h1 {
+                font-size: 1.1rem;
+                margin: 0;
+                transform: scaleY(1.2);
+                font-weight: normal;
+            }
+        }
+
+        .area_alerts {
+            display: flex;
+            flex-flow: row wrap;
+
+            .city {
+                position: relative;
+                margin: 1px;
+                padding: 6px;
+                flex: 1 1 auto;
+                .city_name {
+                    font-size: .7rem;
+                }
+            }
+        }
+    }
+}
