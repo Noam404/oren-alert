@@ -9,3 +9,6 @@ dist/
 # misc
 .idea/
 node_modules/
+
+#private
+keys.json
