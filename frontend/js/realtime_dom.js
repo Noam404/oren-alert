@@ -1,15 +1,5 @@
 import $ from 'jquery';
-// import wait from './utils';
-
-function removeArrayElement(array, value) {
-    let index = array.indexOf(value);
-    if (index > -1) {
-        array.splice(index, 1);
-    }
-}
-function wait(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+import {wait} from './utils';
 
 async function slideRight(element, time) {
     element.animate({width: '100%'}, time);   
@@ -25,7 +15,6 @@ class Area {
         this.area = area_name;
         this.alerts = [];
         this.element = null;
-        this.deleting = false;
     }
 
     async init () {
@@ -77,10 +66,9 @@ class Area {
     }
 
     async checkAlerts () {
-        if (this.deleting == false && this.alerts.length == 0) {
-            this.deleting = true;
+        if (this.alerts.length == 0) {
             this.deleteThis();
-            this.category_object.checkAlerts();
+            this.categoryObject.checkAreas();
         }
     }
 
@@ -96,11 +84,12 @@ class Area {
     }
 
     async deleteThis () {
+        delete this.categoryObject.areas[this.area];
+        
         slideRightClose(this.element.children(".area_header").children(".bg"), 300);
         this.element.children(".area_header").children("h1").fadeOut(300);
         await wait(300);
         this.element.remove();
-        
     }
 }
 
@@ -120,9 +109,8 @@ class Category {
         this.id = cat_id;
         this.desc = desc[cat_id];
         this.logo = id_logo[cat_id];
-        this.areas = [];
+        this.areas = {};
         this.element = null;
-        this.deleting = false;
         this.mainalert = mainalert;
     }
 
@@ -164,9 +152,8 @@ class Category {
         return false;
     }
 
-    async checkAreas () {
-        if (this.deleting == false && this.areas.length == 0) {
-            this.deleting = true;
+    checkAreas () {
+        if (Object.keys(this.areas).length == 0) {
             this.deleteThis();
             this.mainalert.checkCategory();
         }
@@ -186,6 +173,9 @@ class Category {
     }
 
     async deleteThis () {
+        delete this.mainalert.categories[this.id];
+        // console.log(this.mainalert.categories)
+        
         slideRightClose(this.element.children(".header").children(".bg"), 300);
         this.element.children(".header").children(".text").fadeOut(300);
         this.element.children(".header").children(".image").fadeOut(300);
@@ -233,7 +223,8 @@ export class MainAlert {
     }
 
     async checkCategory () {
-        if (this.initialized == true && this.categories.length == 0) {
+        // console.log(this.categories)
+        if (this.initialized == true && Object.keys(this.categories).length == 0) {
             this.initialized = false;
             this.deleteThis();
         }
